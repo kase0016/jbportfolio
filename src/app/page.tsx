@@ -105,7 +105,10 @@ const Home = () => {
     <div className="h-[100dvh]">
       {/* Header Section */}
       <div className="xs:px-8 flex flex-row items-center pt-5 justify-between">
-        <h3 className="text-[23px] font-bold" onClick={() => router.push("/")}>
+        <h3
+          className="text-[23px] font-bold bg-black rounded-lg text-white px-4"
+          onClick={() => router.push("/")}
+        >
           JB Kasenda
         </h3>
         <HamburgerMenu
@@ -122,7 +125,7 @@ const Home = () => {
         <div
           className={`${
             hideMenu ? "xs:hidden" : "xs:block"
-          } absolute z-10 bg-black h-dvh w-[55dvw] -right-2 top-0 pt-10`}
+          } absolute z-10 bg-black h-dvh w-[55dvw] -right-2 top-0 pt-5`}
         >
           <div className=" flex justify-end pr-7">
             <XExitIcon
@@ -133,14 +136,17 @@ const Home = () => {
             />
           </div>
 
-          <nav className="xs:flex flex-col">
-            <Link className="text-slate-50 pl-3" href="/skillsnexp">
-              Skills & Experience
-            </Link>
-            <Link className="text-slate-50 pl-3" href="/aboutme">
+          <nav className="xs:flex flex-col gap-3 mt-5">
+            <Link className="text-slate-50 pl-3 text-[18px]" href="/aboutme">
               About Me
             </Link>
-            <Link className="text-slate-50 pl-3" href="/contactme">
+            <Link className="text-slate-50 pl-3 text-[18px]" href="/skillsnexp">
+              Skills & Experience
+            </Link>
+            <Link className="text-slate-50 pl-3 text-[18px]" href="/myprojects">
+              My Projects
+            </Link>
+            <Link className="text-slate-50 pl-3 text-[18px]" href="/contactme">
               Contact Me
             </Link>
           </nav>
