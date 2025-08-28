@@ -3,14 +3,13 @@ import { QuoteOD, WeatherRes } from "../features/weather/types";
 
 // Get weather with default location
 
-const hostVercel = process.env.VERCEL_URL;
+const hostVercel = process.env.VERCEL_WHOLE_URL;
 
-const urlBase = `https://${hostVercel}` || `http://localhost:3000`;
 export const getWeatherNoLocation = async (): Promise<WeatherRes> => {
   // Fetch Weather Using Ottawa
   const city = "Ottawa";
   const res = await fetch(
-    `${urlBase}/api/weather?q=${encodeURIComponent(city)}`,
+    `${hostVercel}/api/weather?q=${encodeURIComponent(city)}`,
     {
       cache: "no-store",
     }
@@ -27,7 +26,7 @@ export const getWeatherWithLocation = async (
 ): Promise<WeatherRes> => {
   const location = `${lat},${lon}`;
   const res = await fetch(
-    `${urlBase}/api/weather?q=${encodeURIComponent(location)}`,
+    `${hostVercel}/api/weather?q=${encodeURIComponent(location)}`,
     {
       cache: "no-store",
     }
@@ -38,7 +37,7 @@ export const getWeatherWithLocation = async (
 };
 
 export const getQuoteOD = async (): Promise<QuoteOD> => {
-  const res = await fetch(`${urlBase}/api/quoteofday`, {
+  const res = await fetch(`${hostVercel}/api/quoteofday`, {
     cache: "no-store",
   });
 
