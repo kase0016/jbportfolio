@@ -30,7 +30,7 @@ const SkillsNExp = () => {
       <div
         className={`${
           hideMenu ? "xs:hidden" : "xs:block"
-        } absolute z-10 bg-black h-dvh w-[55dvw] -right-2 top-0 pt-5`}
+        } absolute z-10 bg-black h-dvh w-[45dvw] -right-2 top-0 pt-5`}
       >
         <div className=" flex justify-end pr-7">
           <XExitIcon
@@ -47,12 +47,6 @@ const SkillsNExp = () => {
           </Link>
           <Link className="text-slate-50 pl-3 text-[18px]" href="/skillsnexp">
             Skills & Experience
-          </Link>
-          <Link className="text-slate-50 pl-3 text-[18px]" href="/myprojects">
-            My Projects
-          </Link>
-          <Link className="text-slate-50 pl-3 text-[18px]" href="/contactme">
-            Contact Me
           </Link>
         </nav>
       </div>

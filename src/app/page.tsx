@@ -104,28 +104,39 @@ const Home = () => {
   return (
     <div className="h-[100dvh]">
       {/* Header Section */}
-      <div className="xs:px-8 flex flex-row items-center pt-5 justify-between">
+      <div className="px-8 flex flex-row items-center pt-5 justify-between lg:px-20 xl:px-45 pt-15">
         <h3
           className="text-[23px] font-bold bg-black rounded-lg text-white px-4"
           onClick={() => router.push("/")}
         >
           JB Kasenda
         </h3>
-        <HamburgerMenu
-          size="40"
-          color="black"
-          onclick={() => setHideMenu((prev) => !prev)}
-          swidth={3}
-        />
+
+        <nav className="hidden lg:flex gap-2">
+          <Link className="pl-3 text-[22px] font-semibold" href="/aboutme">
+            About Me
+          </Link>
+          <Link className="pl-3 text-[22px] font-semibold" href="/skillsnexp">
+            Skills & Experience
+          </Link>
+        </nav>
+        <div className="block lg:hidden">
+          <HamburgerMenu
+            size="40"
+            color="black"
+            onclick={() => setHideMenu((prev) => !prev)}
+            swidth={3}
+          />
+        </div>
       </div>
 
       {/* Main Sections */}
-      <div className="xs: flex flex-col justify-items-start gap-3 px-8">
+      <div className="flex flex-col justify-items-start gap-3 px-8 lg:px-20 xl:px-45">
         {/* Nav Section */}
         <div
           className={`${
             hideMenu ? "xs:hidden" : "xs:block"
-          } absolute z-10 bg-black h-dvh w-[55dvw] -right-2 top-0 pt-5`}
+          } absolute z-10 bg-black h-dvh w-[45dvw] -right-2 top-0 pt-5`}
         >
           <div className=" flex justify-end pr-7">
             <XExitIcon
@@ -142,12 +153,6 @@ const Home = () => {
             </Link>
             <Link className="text-slate-50 pl-3 text-[18px]" href="/skillsnexp">
               Skills & Experience
-            </Link>
-            <Link className="text-slate-50 pl-3 text-[18px]" href="/myprojects">
-              My Projects
-            </Link>
-            <Link className="text-slate-50 pl-3 text-[18px]" href="/contactme">
-              Contact Me
             </Link>
           </nav>
         </div>
@@ -173,7 +178,7 @@ const Home = () => {
           </div>
         )}
 
-        <div className="xs:flex flex-col ">
+        <div className="flex flex-col sm:flex-row">
           <Image
             src="/jb.jpg"
             alt="Placeholder"
@@ -185,15 +190,17 @@ const Home = () => {
           {/* Hero Banner Text */}
           <div className="xs:flex flex-row items-center">
             <div>
-              <h1 className="xs:pb-3 text-[35px]/8 font-black">{myTitle}</h1>
-              <h4 className="xs: text-[17px]/6">
+              <h1 className="pb-3 text-[35px]/8 font-black sm:text-[57px]/13 ">
+                {myTitle}
+              </h1>
+              <h4 className="text-[17px]/6 sm:text-[22px]/7">
                 Building modern digital experiences through web design &
                 development, video editing, and graphic design.
               </h4>
               <div className="xs:flex flex-row items-center gap-3 col-start-1 col-end-3">
                 <Link
                   href="contactme"
-                  className="xs:py-3 text-[18px] font-bold"
+                  className="py-3 text-[18px] font-bold sm:text-[24px]"
                 >
                   Let's Work Together
                 </Link>
@@ -207,31 +214,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Buttons */}
-        <div className="xs:grid grid-cols-2 gap-2 mb-2">
-          <Link
-            href="/skillsnexp"
-            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px]"
-          >
-            Skills & Experience
-          </Link>
-          <Link
-            href="aboutme"
-            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px]"
-          >
-            About Me
-          </Link>
-          <Link
-            href="aboutme"
-            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] col-start-1 col-end-3"
-          >
-            My Projects
-          </Link>
-        </div>
       </div>
       {/* Tech Stack & Skill Logo Section */}
-      <div className=" py-10 relative overflow-hidden">
+      <div className=" py-7 relative overflow-hidden">
         {/* moving track */}
         <div className="flex animate-marquee-x whitespace-nowrap">
           {/* track half 1 */}
@@ -266,6 +251,20 @@ const Home = () => {
               className="object-contain mb-2.5 self-center"
             />
             <Image
+              src="/16.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/17.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
               src="/14.png"
               alt=""
               width={35}
@@ -274,6 +273,13 @@ const Home = () => {
             />
             <Image
               src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/15.png"
               alt=""
               width={70}
               height={70}
@@ -361,6 +367,20 @@ const Home = () => {
               className="object-contain mb-2.5 self-center"
             />
             <Image
+              src="/16.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/17.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
               src="/14.png"
               alt=""
               width={35}
@@ -369,6 +389,13 @@ const Home = () => {
             />
             <Image
               src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/15.png"
               alt=""
               width={70}
               height={70}
@@ -456,6 +483,20 @@ const Home = () => {
               className="object-contain mb-2.5 self-center"
             />
             <Image
+              src="/16.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/17.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
               src="/14.png"
               alt=""
               width={35}
@@ -464,6 +505,13 @@ const Home = () => {
             />
             <Image
               src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/15.png"
               alt=""
               width={70}
               height={70}
@@ -520,6 +568,21 @@ const Home = () => {
             />
           </div>
         </div>
+      </div>
+      {/* Buttons */}
+      <div className="grid grid-cols-2 gap-2 pb-10 px-8 xl:px-45">
+        <Link
+          href="/skillsnexp"
+          className="px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] lg:text-[22px]"
+        >
+          Skills & Experience
+        </Link>
+        <Link
+          href="aboutme"
+          className="px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] lg:text-[22px]"
+        >
+          About Me
+        </Link>
       </div>
     </div>
   );
