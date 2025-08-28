@@ -8,12 +8,9 @@ const hostVercel = process.env.VERCEL_WHOLE_URL;
 export const getWeatherNoLocation = async (): Promise<WeatherRes> => {
   // Fetch Weather Using Ottawa
   const city = "Ottawa";
-  const res = await fetch(
-    `${hostVercel}/api/weather?q=${encodeURIComponent(city)}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`/api/weather?q=${encodeURIComponent(city)}`, {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(`/api/weather failed: ${res.status}`);
   const data = await res.json();
   return weatherResConversion(data);
@@ -25,19 +22,16 @@ export const getWeatherWithLocation = async (
   lon: number
 ): Promise<WeatherRes> => {
   const location = `${lat},${lon}`;
-  const res = await fetch(
-    `${hostVercel}/api/weather?q=${encodeURIComponent(location)}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`/api/weather?q=${encodeURIComponent(location)}`, {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(`/api/weather failed: ${res.status}`);
   const data = await res.json();
   return weatherResConversion(data);
 };
 
 export const getQuoteOD = async (): Promise<QuoteOD> => {
-  const res = await fetch(`${hostVercel}/api/quoteofday`, {
+  const res = await fetch(`/api/quoteofday`, {
     cache: "no-store",
   });
 
