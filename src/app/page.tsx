@@ -203,7 +203,7 @@ const Home = () => {
                   href="contactme"
                   className="py-3 text-[18px] font-bold sm:text-[24px]"
                 >
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </Link>
                 <InfoArrow
                   size="25"
