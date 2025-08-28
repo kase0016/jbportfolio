@@ -95,11 +95,12 @@ const Home = () => {
         const locationWeather = await getWeatherWithLocation(lat, lon);
         console.log("weather with location", locationWeather);
         dispatch(setWeatherAction(locationWeather));
-      } catch (e: any) {
-        setError(e.message ?? "Failed to fetch weather");
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : String(e);
+        setError(msg);
       }
     })();
-  }, [coords]);
+  }, [coords, dispatch]);
 
   return (
     <div className="h-[100dvh]">

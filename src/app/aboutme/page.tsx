@@ -82,6 +82,7 @@ const AboutMe = () => {
         {quotes && (
           <div>
             <h1 className="text-[27px] font-semibold py-4">Quote of The Day</h1>
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="xs: text-[17px]/5 pb-2">{quotes?.quote}</p>
             <p className="xs: text-[20px]/6 pb-5 font-semibold italic">
               {quotes?.author}
@@ -91,19 +92,19 @@ const AboutMe = () => {
 
         <h1 className="text-[27px] font-semibold py-4">About Me</h1>
         <p className="xs: text-[17px]/6 pb-5">
-          I’m Jean-Baptiste Kasenda, a developer who began in content
+          I&apos;m Jean-Baptiste Kasenda, a developer who began in content
           creation—video editing and visual design in Photoshop and
           Illustrator—then moved into software when I co-founded a startup and
           trained to build our web app. Since then, coding and problem-solving
           have been my focus.
         </p>
         <p className="xs: text-[17px]/6">
-          Today I’m a full-stack developer working with React, Next.js, Redux,
-          TypeScript, Tailwind, HTML/CSS on the front end and Node.js, Express,
-          MongoDB on the back, and I still bring a designer’s eye with Figma and
-          Adobe (After Effects, Photoshop, Premiere Pro, Illustrator). I’m
-          excited to kick-start my journey as a software developer and bring
-          that blend of craft and care to every project.
+          Today I&apos;m a full-stack developer working with React, Next.js,
+          Redux, TypeScript, Tailwind, HTML/CSS on the front end and Node.js,
+          Express, MongoDB on the back, and I still bring a designer&apos;s eye
+          with Figma and Adobe (After Effects, Photoshop, Premiere Pro,
+          Illustrator). I&apos;m excited to kick-start my journey as a software
+          developer and bring that blend of craft and care to every project.
         </p>
       </div>
 
@@ -153,8 +154,8 @@ const AboutMe = () => {
             end and Node.js/Express on the back end. The homepage includes
             search, multi-facet filtering, and card-based listings pulled from
             our database. I also built an admin portal to manage content—create,
-            edit, and delete records across multiple models. It’s deployed on
-            Vercel (frontend) and Render (API/backend).
+            edit, and delete records across multiple models. It&apos;s deployed
+            on Vercel (frontend) and Render (API/backend).
           </p>
           <a href="https://themotive.ca/motives">
             Live Web App (Free Tier Will Tak Time To Load)
@@ -169,8 +170,8 @@ const AboutMe = () => {
             This site is built with Next.js (React), TypeScript, and Tailwind
             CSS. It fetches live weather from an external API and stores it in
             Redux, and the quote above updates daily from another API. In this
-            website, you’ll find my tech stack, work experience, projects I’ve
-            worked on and a little more about me.
+            website, you&apos;ll find my tech stack, work experience, projects
+            I&apos;ve worked on and a little more about me.
           </p>
           <a href="https://kase0016.github.io/jbportfolio/">
             Portfolio Link GitHUB

@@ -72,7 +72,7 @@ const SkillsNExp = () => {
             Tech Stack
           </h1>
           <p className="px-8 text-[17px]/4.5 lg:px-20  xl:px-45">
-            Here are all the languages I am familiar with that includes both
+            Here are all the languages I&apos;m familiar with that includes both
             front-end and back-end.
           </p>
           <div className="overflow-x-auto scrollbar-hide sm:overflow-visible">
@@ -103,8 +103,8 @@ const SkillsNExp = () => {
             Design and Editing Tools
           </h1>
           <p className="px-8 text-[17px]/4.5 lg:px-20  xl:px-45">
-            Here are all the design and editing tools I'm familiar with and have
-            experience using.
+            Here are all the design and editing tools I&apos;m familiar with and
+            have experience using.
           </p>
           <div className=" overflow-x-scroll scrollbar-hide">
             <div className="pl-8 grid grid-rows-1 grid-flow-col auto-cols-max gap-4 w-max py-4 lg:pl-20 xl:pl-45">
