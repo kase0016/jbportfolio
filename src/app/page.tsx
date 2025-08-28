@@ -37,7 +37,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
   const weather = useAppSelector((s) => s.weather.data);
   const router = useRouter();
-  // Weathe Ixon
+  // Weather Icon
   const rawIcon = weather?.icon;
   const icon = rawIcon?.startsWith("//") ? `https:${rawIcon}` : rawIcon;
 
