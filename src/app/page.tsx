@@ -1,103 +1,522 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { InfoArrow, HamburgerMenu, XExitIcon } from "@/components/icons/icon";
+import { useRouter } from "next/navigation";
+import { useAppSelector, useAppDispatch } from "@/lib/hooks";
+import { setWeather as setWeatherAction } from "@/lib/features/weather/slice";
+import { clearWeather as clearingWeather } from "@/lib/features/weather/slice";
+import {
+  getWeatherNoLocation,
+  getWeatherWithLocation,
+} from "@/lib/utils/utils";
 
-export default function Home() {
+const TITLES = [
+  "Full Stack Developer",
+  "Front-End Developer",
+  "Back-End Developer",
+  "Graphic Designer",
+  "Video Editor",
+  "UX Designer",
+  "UI Designer",
+];
+
+const Home = () => {
+  type Coords = { lat: number; lon: number };
+  const [index, setIndex] = useState(0);
+  // const [perm, setPerm] = useState<PermissionState | "unsupported" | null>(
+  //   null
+  // );
+  const [coords, setCoords] = useState<Coords | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [hideMenu, setHideMenu] = useState(true);
+
+  const myTitle = TITLES[index];
+  const dispatch = useAppDispatch();
+  const weather = useAppSelector((s) => s.weather.data);
+  const router = useRouter();
+  // Weathe Ixon
+  const rawIcon = weather?.icon;
+  const icon = rawIcon?.startsWith("//") ? `https:${rawIcon}` : rawIcon;
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % TITLES.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      if (
+        !("geolocation" in navigator) ||
+        !("permissions" in navigator) ||
+        !coords
+      ) {
+        const data = await getWeatherNoLocation();
+        dispatch(setWeatherAction(data));
+        // dispatch();
+        if (!cancelled) return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const currentCoord = {
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude,
+          };
+          if (!cancelled) setCoords(currentCoord);
+        },
+        (err) => {
+          if (!cancelled) setError(err.message);
+        },
+        { enableHighAccuracy: true, timeout: 10_000, maximumAge: 0 }
+      );
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("redux weather changed:", weather);
+  }, [weather]);
+
+  useEffect(() => {
+    if (!coords) return;
+    (async () => {
+      try {
+        const { lat, lon } = coords;
+        const locationWeather = await getWeatherWithLocation(lat, lon);
+        console.log("weather with location", locationWeather);
+        dispatch(setWeatherAction(locationWeather));
+      } catch (e: any) {
+        setError(e.message ?? "Failed to fetch weather");
+      }
+    })();
+  }, [coords]);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="h-[100dvh]">
+      {/* Header Section */}
+      <div className="xs:px-8 flex flex-row items-center pt-5 justify-between">
+        <h3 className="text-[23px] font-bold" onClick={() => router.push("/")}>
+          JB Kasenda
+        </h3>
+        <HamburgerMenu
+          size="40"
+          color="black"
+          onclick={() => setHideMenu((prev) => !prev)}
+          swidth={3}
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Main Sections */}
+      <div className="xs: flex flex-col justify-items-start gap-3 px-8">
+        {/* Nav Section */}
+        <div
+          className={`${
+            hideMenu ? "xs:hidden" : "xs:block"
+          } absolute z-10 bg-black h-dvh w-[55dvw] -right-2 top-0 pt-10`}
+        >
+          <div className=" flex justify-end pr-7">
+            <XExitIcon
+              size="20"
+              color="white"
+              onclick={() => setHideMenu((prev) => !prev)}
+              swidth={70}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          <nav className="xs:flex flex-col">
+            <Link className="text-slate-50 pl-3" href="/skillsnexp">
+              Skills & Experience
+            </Link>
+            <Link className="text-slate-50 pl-3" href="/aboutme">
+              About Me
+            </Link>
+            <Link className="text-slate-50 pl-3" href="/contactme">
+              Contact Me
+            </Link>
+          </nav>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        {/* Weather In Your Area */}
+        {weather && (
+          <div className="justify-between flex flex-row items-center">
+            <h2 className="text-[30px] font-medium">{weather?.city}</h2>
+            <div className="self-end flex flex-row items-center">
+              {icon && (
+                <Image
+                  src={icon}
+                  alt={weather?.condition ?? "Weather icon"}
+                  width={80}
+                  height={80}
+                  priority
+                  className="rounded-full object-cover self-end"
+                />
+              )}
+              <h2 className="text-[30px] font-medium">
+                {weather?.tempC}&deg;C
+              </h2>
+            </div>
+          </div>
+        )}
+
+        <div className="xs:flex flex-col ">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/jb.jpg"
+            alt="Placeholder"
+            width={320}
+            height={320}
+            priority
+            className="xs:rounded-full  object-cover mb-2.5 rounded-2xl self-center"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {/* Hero Banner Text */}
+          <div className="xs:flex flex-row items-center">
+            <div>
+              <h1 className="xs:pb-3 text-[35px]/8 font-black">{myTitle}</h1>
+              <h4 className="xs: text-[17px]/6">
+                Building modern digital experiences through web design &
+                development, video editing, and graphic design.
+              </h4>
+              <div className="xs:flex flex-row items-center gap-3 col-start-1 col-end-3">
+                <Link
+                  href="contactme"
+                  className="xs:py-3 text-[18px] font-bold"
+                >
+                  Let's Work Together
+                </Link>
+                <InfoArrow
+                  size="25"
+                  color="black"
+                  onclick={() => router.push("/contactme")}
+                  swidth={0}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Buttons */}
+        <div className="xs:grid grid-cols-2 gap-2 mb-2">
+          <Link
+            href="/skillsnexp"
+            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px]"
+          >
+            Skills & Experience
+          </Link>
+          <Link
+            href="aboutme"
+            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px]"
+          >
+            About Me
+          </Link>
+          <Link
+            href="aboutme"
+            className="xs:px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] col-start-1 col-end-3"
+          >
+            My Projects
+          </Link>
+        </div>
+      </div>
+      {/* Tech Stack & Skill Logo Section */}
+      <div className=" py-10 relative overflow-hidden">
+        {/* moving track */}
+        <div className="flex animate-marquee-x whitespace-nowrap">
+          {/* track half 1 */}
+          <div className="flex gap-3.5 pr-3.5 shrink-0">
+            {/* your images once */}
+            <Image
+              src="/2.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/5.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/6.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/7.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/14.png"
+              alt=""
+              width={35}
+              height={50}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/3.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/4.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/8.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/9.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/10.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/11.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/12.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+          </div>
+          {/* track half 2 */}
+          <div className="flex gap-3.5 pr-3.5 shrink-0">
+            {/* your images once */}
+            <Image
+              src="/2.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/5.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/6.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/7.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/14.png"
+              alt=""
+              width={35}
+              height={50}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/3.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/4.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/8.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/9.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/10.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/11.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/12.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+          </div>
+          {/* track half 3 */}
+          <div className="flex gap-3.5 pr-3.5 shrink-0">
+            {/* your images once */}
+            <Image
+              src="/2.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/5.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/6.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/7.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/14.png"
+              alt=""
+              width={35}
+              height={50}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/13.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/3.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/4.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/8.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/9.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/10.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/11.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+            <Image
+              src="/12.png"
+              alt=""
+              width={70}
+              height={70}
+              className="object-contain mb-2.5 self-center"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Home;
