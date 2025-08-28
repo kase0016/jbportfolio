@@ -59,7 +59,6 @@ const Home = () => {
       ) {
         const data = await getWeatherNoLocation();
         dispatch(setWeatherAction(data));
-        if (!cancelled) return;
       }
 
       navigator.geolocation.getCurrentPosition(

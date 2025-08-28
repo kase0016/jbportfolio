@@ -3,8 +3,6 @@ import { QuoteOD, WeatherRes } from "../features/weather/types";
 
 // Get weather with default location
 
-const hostVercel = process.env.VERCEL_WHOLE_URL;
-
 export const getWeatherNoLocation = async (): Promise<WeatherRes> => {
   // Fetch Weather Using Ottawa
   const city = "Ottawa";
