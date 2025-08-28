@@ -141,8 +141,8 @@ const AboutMe = () => {
       <div className="px-8 lg:px-20 xl:px-45">
         <h1 className="text-[27px] font-semibold py-4">My Projects</h1>
         <p className="xs: text-[17px]/6 pb-5">
-          Below are some of the projects I've worked on and links to the github
-          repository or webpages themselves.
+          Below are some of the projects I&apos;ve worked on and links to the
+          github repository or webpages themselves.
         </p>
 
         <div className="mb-7">
