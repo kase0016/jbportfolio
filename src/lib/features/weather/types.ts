@@ -26,3 +26,9 @@ export type WeatherRes = {
   feelTempC: number;
   icon: string;
 };
+
+export type QuoteOD = {
+  quote: string;
+  author: string;
+  category: string;
+};

@@ -178,7 +178,7 @@ const Home = () => {
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col sm:flex-row lg:gap-6 xl:gap-10">
           <Image
             src="/jb.jpg"
             alt="Placeholder"
