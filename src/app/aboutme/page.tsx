@@ -98,7 +98,7 @@ const AboutMe = () => {
           trained to build our web app. Since then, coding and problem-solving
           have been my focus.
         </p>
-        <p className="xs: text-[17px]/6">
+        <p className="xs: text-[17px]/6 pb-5">
           Today I&apos;m a full-stack developer working with React, Next.js,
           Redux, TypeScript, Tailwind, HTML/CSS on the front end and Node.js,
           Express, MongoDB on the back, and I still bring a designer&apos;s eye
@@ -106,6 +106,8 @@ const AboutMe = () => {
           Illustrator). I&apos;m excited to kick-start my journey as a software
           developer and bring that blend of craft and care to every project.
         </p>
+        <p className="xs: text-[17px]/6">You can contact me by email at :</p>
+        <p className="xs: text-[17px]/6 font-bold">jb.kasenda@outlook.com</p>
       </div>
 
       {/* Education */}

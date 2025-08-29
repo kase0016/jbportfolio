@@ -198,7 +198,7 @@ const Home = () => {
               </h4>
               <div className="xs:flex flex-row items-center gap-3 col-start-1 col-end-3">
                 <Link
-                  href="contactme"
+                  href="aboutme"
                   className="py-3 text-[18px] font-bold sm:text-[24px]"
                 >
                   Let&apos;s Work Together
@@ -206,7 +206,7 @@ const Home = () => {
                 <InfoArrow
                   size="25"
                   color="black"
-                  onclick={() => router.push("/contactme")}
+                  onclick={() => router.push("/aboutme")}
                   swidth={0}
                 />
               </div>
