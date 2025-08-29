@@ -175,7 +175,7 @@ const AboutMe = () => {
             website, you&apos;ll find my tech stack, work experience, projects
             I&apos;ve worked on and a little more about me.
           </p>
-          <a href="https://jbportfolio-oytkrp4dg-jbs-projects-11e7da11.vercel.app/">
+          <a href="https://jbportfolio.vercel.app/">
             Portfolio Link Live On Vercel
           </a>
         </div>
