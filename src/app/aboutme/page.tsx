@@ -160,7 +160,7 @@ const AboutMe = () => {
             on Vercel (frontend) and Render (API/backend).
           </p>
           <a href="https://themotive.ca/motives">
-            Live Web App (Free Tier Will Tak Time To Load)
+            Live Web App (Free Tier Will Take Time To Load)
           </a>
         </div>
 
