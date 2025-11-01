@@ -77,6 +77,8 @@ const AboutMe = () => {
           </Link>
         </nav>
       </div>
+
+      <div></div>
       {/* About Me */}
       <div className="px-8 lg:px-20 xl:px-45">
         {quotes && (
@@ -119,7 +121,7 @@ const AboutMe = () => {
               Algonquin College Ottawa Campus
             </h3>
             <h3 className="text-[15px]/6 font-normal">
-              Mobile Application Developement and Design
+              Mobile Application Development and Design
             </h3>
             <h3 className="text-[15px]/6 font-normal -mt-1 italic">
               2023 - 2025
@@ -140,44 +142,64 @@ const AboutMe = () => {
       </div>
 
       {/* My Projects */}
-      <div className="px-8 lg:px-20 xl:px-45">
-        <h1 className="text-[27px] font-semibold py-4">My Projects</h1>
-        <p className="xs: text-[17px]/6 pb-5">
-          Below are some of the projects I&apos;ve worked on and links to the
-          github repository or webpages themselves.
-        </p>
-
-        <div className="mb-7">
-          <h1 className="text-[20px] font-semibold pb-2 lg:  xl:">
-            The Motive Network Web App
-          </h1>
+      <div className="px-8 lg:px-20 xl:px-45 xl:pb-20">
+        <div>
+          <h1 className="text-[27px] font-semibold py-4">My Projects</h1>
           <p className="xs: text-[17px]/6 pb-5">
-            This web app is built with React, JavaScript, and CSS on the front
-            end and Node.js/Express on the back end. The homepage includes
-            search, multi-facet filtering, and card-based listings pulled from
-            our database. I also built an admin portal to manage content—create,
-            edit, and delete records across multiple models. It&apos;s deployed
-            on Vercel (frontend) and Render (API/backend).
+            Below are some of the projects I&apos;ve worked on and links to the
+            github repository or webpages themselves.
           </p>
-          <a href="https://themotive.ca/motives">
-            Live Web App (Free Tier Will Tak Time To Load)
-          </a>
-        </div>
 
-        <div className="mb-7">
-          <h1 className="text-[20px] font-semibold pb-2 lg:  xl:">
-            My Portfolio Website
-          </h1>
-          <p className="xs: text-[17px]/6 pb-5">
-            This site is built with Next.js (React), TypeScript, and Tailwind
-            CSS. It fetches live weather from an external API and stores it in
-            Redux, and the quote above updates daily from another API. In this
-            website, you&apos;ll find my tech stack, work experience, projects
-            I&apos;ve worked on and a little more about me.
-          </p>
-          <a href="https://jbportfolio.vercel.app/">
-            Portfolio Link Live On Vercel
-          </a>
+          <div className="flex flex-col lg:gap-5">
+            {/* Left: Text Section */}
+            <div className="flex-1 ">
+              <h1 className="text-[20px] font-semibold pb-2">
+                The Motive Network Web App
+              </h1>
+              <p className="text-[17px] leading-6 pb-5">
+                This web application is built with Next.js and TypeScript,
+                styled with Tailwind CSS, and powered by a Neon PostgreSQL
+                database accessed through Prisma ORM. The homepage includes
+                search and multi-facet filtering, along with card-based listings
+                dynamically generated from the database. I also developed an
+                admin portal that enables users to create, edit, and delete
+                records across multiple models. Additional features include a
+                bookmarking system and content sharing for improved user
+                experience. The entire application is deployed on Vercel for
+                high performance and scalability.
+              </p>
+              <a
+                href="https://themotive.ca/motives"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-brand-magenta hover:text-brand-orange transition-colors"
+              >
+                Click Here to Visit The Motive
+              </a>
+            </div>
+
+            <div className="flex gap-5">
+              {/* Right: Vertical Video */}
+              <div className="relative w-[180px] aspect-[7.4/16] rounded-sm overflow-hidden shadow-neon">
+                <iframe
+                  src="https://www.youtube.com/embed/c7GVNwpmZWs?autoplay=1&mute=1&loop=1&controls=0&playlist=c7GVNwpmZWs&modestbranding=1&showinfo=0"
+                  title="Vertical video"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                />
+              </div>
+              <div className="relative h-[380px] aspect-[15.4/9] rounded-sm overflow-hidden shadow-neon">
+                <iframe
+                  src="https://www.youtube.com/embed/fshYRhbz_lk?autoplay=1&mute=1&loop=1&controls=0&playlist=fshYRhbz_lk&modestbranding=1&showinfo=0"
+                  title="Vertical video"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

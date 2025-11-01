@@ -223,14 +223,14 @@ const Home = () => {
             {/* your images once */}
             <Image
               src="/2.png"
-              alt=""
+              alt="Javascript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/5.png"
-              alt=""
+              alt="React Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
@@ -244,91 +244,91 @@ const Home = () => {
             />
             <Image
               src="/7.png"
-              alt=""
+              alt="Redux Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/16.png"
-              alt=""
+              alt="Typescript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/17.png"
-              alt=""
+              alt="Tailwind Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/14.png"
-              alt=""
+              alt="MongoDB Logo"
               width={35}
               height={50}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/13.png"
-              alt=""
+              alt="Next JS"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/15.png"
-              alt=""
+              alt="Figma Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/3.png"
-              alt=""
+              alt="CSS Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/4.png"
-              alt=""
+              alt="HTML5 Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/8.png"
-              alt=""
+              alt="Adobe Photoshop"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/9.png"
-              alt=""
+              alt="Adobe Illustrator"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/10.png"
-              alt=""
+              alt="Adobe After Effect"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/11.png"
-              alt=""
+              alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/12.png"
-              alt=""
+              alt="Adobe Light Room Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
@@ -339,14 +339,14 @@ const Home = () => {
             {/* your images once */}
             <Image
               src="/2.png"
-              alt=""
+              alt="Javascript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/5.png"
-              alt=""
+              alt="React Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
@@ -360,91 +360,91 @@ const Home = () => {
             />
             <Image
               src="/7.png"
-              alt=""
+              alt="Redux Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/16.png"
-              alt=""
+              alt="Typescript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/17.png"
-              alt=""
+              alt="Tailwind Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/14.png"
-              alt=""
+              alt="MongoDB Logo"
               width={35}
               height={50}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/13.png"
-              alt=""
+              alt="Next JS"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/15.png"
-              alt=""
+              alt="Figma Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/3.png"
-              alt=""
+              alt="CSS Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/4.png"
-              alt=""
+              alt="HTML5 Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/8.png"
-              alt=""
+              alt="Adobe Photoshop"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/9.png"
-              alt=""
+              alt="Adobe Illustrator"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/10.png"
-              alt=""
+              alt="Adobe After Effect"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/11.png"
-              alt=""
+              alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/12.png"
-              alt=""
+              alt="Adobe Light Room Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
@@ -455,14 +455,14 @@ const Home = () => {
             {/* your images once */}
             <Image
               src="/2.png"
-              alt=""
+              alt="Javascript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/5.png"
-              alt=""
+              alt="React Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
@@ -476,91 +476,91 @@ const Home = () => {
             />
             <Image
               src="/7.png"
-              alt=""
+              alt="Redux Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/16.png"
-              alt=""
+              alt="Typescript Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/17.png"
-              alt=""
+              alt="Tailwind Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/14.png"
-              alt=""
+              alt="MongoDB Logo"
               width={35}
               height={50}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/13.png"
-              alt=""
+              alt="Next JS"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/15.png"
-              alt=""
+              alt="Figma Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/3.png"
-              alt=""
+              alt="CSS Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/4.png"
-              alt=""
+              alt="HTML5 Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/8.png"
-              alt=""
+              alt="Adobe Photoshop"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/9.png"
-              alt=""
+              alt="Adobe Illustrator"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/10.png"
-              alt=""
+              alt="Adobe After Effect"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/11.png"
-              alt=""
+              alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
             />
             <Image
               src="/12.png"
-              alt=""
+              alt="Adobe Light Room Logo"
               width={70}
               height={70}
               className="object-contain mb-2.5 self-center"
