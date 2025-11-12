@@ -22,7 +22,7 @@ const AboutMe = () => {
   return (
     <div>
       {/* Header */}
-      <div className="px-8 flex flex-row items-center pt-5 justify-between lg:px-20 xl:px-45 pt-15">
+      <div className="px-8 flex flex-row items-center justify-between lg:px-20 xl:px-45 pt-15">
         <h3
           className="text-[23px] font-bold bg-black rounded-lg text-white px-4"
           onClick={() => router.push("/")}
@@ -169,7 +169,7 @@ const AboutMe = () => {
                 high performance and scalability.
               </p>
               <a
-                href="https://themotive.ca/motives"
+                href="https://www.themotive.ca/curatedlists"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline text-brand-magenta hover:text-brand-orange transition-colors"
