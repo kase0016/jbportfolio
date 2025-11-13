@@ -200,6 +200,60 @@ const AboutMe = () => {
               </div>
             </div>
           </div>
+
+          <div className="flex flex-col lg:gap-5 mt-10">
+            {/* Left: Text Section */}
+            <div className="flex-1">
+              <h1 className="text-[20px] font-semibold pb-2">
+                Ottawa Daycare Website
+              </h1>
+              <p className="text-[17px] leading-6 pb-5">
+                I designed and developed a responsive website for a local Ottawa
+                daycare, ensuring a seamless experience across mobile, tablet,
+                and desktop devices. The site was built using Next.js, Tailwind
+                CSS, and JavaScript, and deployed on Vercel for fast performance
+                and reliable hosting. I also configured a custom email form that
+                delivers inquiries directly to the client’s inbox, improving
+                their lead response workflow. In addition, I helped craft clear,
+                engaging copy aligned with the daycare’s tone and audience in
+                both English and French, and implemented basic SEO metadata to
+                enhance local visibility on search engines.
+              </p>
+              <a
+                href="https://www.mdaycare.ca" // Replace with your actual project URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-brand-magenta hover:text-brand-orange transition-colors"
+              >
+                Click Here to Visit the Daycare Website
+              </a>
+            </div>
+
+            {/* Right: Videos */}
+            <div className="flex gap-5">
+              {/* Vertical Video */}
+              <div className="relative w-[180px] aspect-[7.4/16] rounded-sm overflow-hidden shadow-neon">
+                <iframe
+                  src="https://www.youtube.com/embed/n2IecV3ZYSE?autoplay=1&mute=1&loop=1&controls=0&playlist=n2IecV3ZYSE&modestbranding=1&showinfo=0"
+                  title="Vertical video"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                />
+              </div>
+
+              {/* Horizontal Video */}
+              <div className="relative h-[380px] aspect-[15.4/9] rounded-sm overflow-hidden shadow-neon">
+                <iframe
+                  src="https://www.youtube.com/embed/NRd0OToOiu8?autoplay=1&mute=1&loop=1&controls=0&playlist=NRd0OToOiu8&modestbranding=1&showinfo=0"
+                  title="Daycare Website Demo"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
