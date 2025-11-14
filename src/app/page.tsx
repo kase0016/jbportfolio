@@ -26,9 +26,6 @@ const TITLES = [
 const Home = () => {
   type Coords = { lat: number; lon: number };
   const [index, setIndex] = useState(0);
-  // const [perm, setPerm] = useState<PermissionState | "unsupported" | null>(
-  //   null
-  // );
   const [coords, setCoords] = useState<Coords | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [hideMenu, setHideMenu] = useState(true);
@@ -112,8 +109,17 @@ const Home = () => {
         </h3>
 
         <nav className="hidden lg:flex gap-2">
+          <Link className="pl-3 text-[22px] font-semibold" href="/">
+            Home
+          </Link>
           <Link className="pl-3 text-[22px] font-semibold" href="/aboutme">
             About Me
+          </Link>
+          <Link
+            className="pl-3 text-[22px] font-semibold"
+            href="/aboutme/#myprojects"
+          >
+            My Projects
           </Link>
           <Link className="pl-3 text-[22px] font-semibold" href="/skillsnexp">
             Skills & Experience
@@ -147,8 +153,17 @@ const Home = () => {
           </div>
 
           <nav className="xs:flex flex-col gap-3 mt-5">
+            <Link className="text-slate-50 pl-3 text-[18px]" href="/">
+              Home
+            </Link>
             <Link className="text-slate-50 pl-3 text-[18px]" href="/aboutme">
               About Me
+            </Link>
+            <Link
+              className="text-slate-50 pl-3 text-[18px]"
+              href="/aboutme/#myprojects"
+            >
+              My Projects
             </Link>
             <Link className="text-slate-50 pl-3 text-[18px]" href="/skillsnexp">
               Skills & Experience
@@ -569,12 +584,18 @@ const Home = () => {
         </div>
       </div>
       {/* Buttons */}
-      <div className="grid grid-cols-2 gap-2 pb-10 px-8 xl:px-45">
+      <div className="grid grid-cols-3 gap-2 pb-10 px-8 xl:px-45">
         <Link
           href="/skillsnexp"
           className="px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] lg:text-[22px]"
         >
           Skills & Experience
+        </Link>
+        <Link
+          href="/aboutme/#myprojects"
+          className="px-2.5 py-4 shadow-btn rounded-md text-center text-[17px] lg:text-[22px]"
+        >
+          My Projects
         </Link>
         <Link
           href="aboutme"

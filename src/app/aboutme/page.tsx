@@ -32,8 +32,17 @@ const AboutMe = () => {
         </h3>
 
         <nav className="hidden lg:flex gap-2">
+          <Link className="pl-3 text-[22px] font-semibold" href="/">
+            Home
+          </Link>
           <Link className="pl-3 text-[22px] font-semibold" href="/aboutme">
             About Me
+          </Link>
+          <Link
+            className="pl-3 text-[22px] font-semibold"
+            href="/aboutme/#myprojects"
+          >
+            My Projects
           </Link>
           <Link className="pl-3 text-[22px] font-semibold" href="/skillsnexp">
             Skills & Experience
@@ -64,13 +73,19 @@ const AboutMe = () => {
         </div>
 
         <nav className="xs:flex flex-col gap-3 mt-5">
+          <Link className="text-slate-50 pl-3 text-[18px]" href="/">
+            Home
+          </Link>
           <Link className="text-slate-50 pl-3 text-[18px]" href="/aboutme">
             About Me
           </Link>
           <Link className="text-slate-50 pl-3 text-[18px]" href="/skillsnexp">
             Skills & Experience
           </Link>
-          <Link className="text-slate-50 pl-3 text-[18px]" href="/myprojects">
+          <Link
+            className="text-slate-50 pl-3 text-[18px]"
+            href="/aboutme/#myprojects"
+          >
             My Projects
           </Link>
           <Link className="text-slate-50 pl-3 text-[18px]" href="/contactme">
@@ -79,7 +94,7 @@ const AboutMe = () => {
         </nav>
       </div>
 
-      <div className="px-8 lg:px-20 xl:px-85 flex justify-center xl:py-30">
+      <div className="px-8 lg:py-20 lg:px-20 xl:px-85 flex justify-center xl:py-30">
         {quotes && (
           <div>
             <h1 className="text-[27px] font-semibold py-4">Quote of The Day</h1>
@@ -174,7 +189,7 @@ const AboutMe = () => {
       </div>
 
       {/* My Projects */}
-      <div className="px-8 py-10 lg:px-20 xl:px-45 xl:py-20 ">
+      <div id="myprojects" className="px-8 py-10 lg:px-20 xl:px-45 xl:py-20 ">
         <div>
           <h1 className="text-[27px] font-semibold py-4">My Projects</h1>
           <p className="xs: text-[17px]/6 pb-5">
