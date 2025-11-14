@@ -27,8 +27,21 @@ export type WeatherRes = {
   icon: string;
 };
 
-export type QuoteOD = {
-  quote: string;
+export type FavQsQuoteResponse = {
+  qotd_date: string;
+  quote: FavQsQuote;
+};
+
+export type FavQsQuote = {
+  id: number;
+  dialogue: boolean;
+  private: boolean;
+  tags: string[];
+  url: string;
+  favorites_count: number;
+  upvotes_count: number;
+  downvotes_count: number;
   author: string;
-  category: string;
+  author_permalink: string;
+  body: string;
 };

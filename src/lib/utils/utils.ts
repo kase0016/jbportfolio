@@ -1,5 +1,5 @@
 import { weatherResConversion } from "../features/weather/mapper";
-import { QuoteOD, WeatherRes } from "../features/weather/types";
+import { WeatherRes, FavQsQuoteResponse } from "../features/weather/types";
 
 // Get weather with default location
 
@@ -28,7 +28,7 @@ export const getWeatherWithLocation = async (
   return weatherResConversion(data);
 };
 
-export const getQuoteOD = async (): Promise<QuoteOD> => {
+export const getQuoteOD = async (): Promise<FavQsQuoteResponse> => {
   const res = await fetch(`/api/quoteofday`, {
     cache: "no-store",
   });
