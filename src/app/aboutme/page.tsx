@@ -80,13 +80,12 @@ const AboutMe = () => {
       </div>
 
       <div className="px-8 lg:px-20 xl:px-85 flex justify-center xl:py-30">
-        {" "}
         {quotes && (
           <div>
             <h1 className="text-[27px] font-semibold py-4">Quote of The Day</h1>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="xs: text-[17px]/5 pb-2 xl:text-[20px] xl:leading-tight">
-              "{quotes?.quote.body}"
+              &quot;{quotes?.quote.body}&quot;
             </p>
             <p className="xs: text-[20px]/6 pb-5 font-semibold italic xl:text-[25px] xl:pt-5">
               - {quotes?.quote.author}
