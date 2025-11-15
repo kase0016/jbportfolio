@@ -250,7 +250,7 @@ const Home = () => {
       </div>
 
       {/* Tech Stack & Skill Logo Section */}
-      <div className="py-7 relative overflow-hidden bg-[rgba(1,18,74,0.75)] border-y border-[rgba(142,250,205,0.25)] backdrop-blur-md mt-4">
+      <div className="py-7 relative overflow-hidden backdrop-blur-md mt-4">
         <div className="flex animate-marquee-x whitespace-nowrap">
           {/* track half 1 */}
           <div className="flex gap-3.5 pr-3.5 shrink-0">
