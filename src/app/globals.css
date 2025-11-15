@@ -31,7 +31,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f383b;
+  --marine-deep: #01124a;
+  --marine-mid: #012286;
+  --marine-mid-light: #014f86;
+
+  --teal-bridge: #2a9d8f;
+
+  --electric-green: #00ff9c;
+  --mint-green: #8efacd;
+
+  --charcoal-navy: #041c32;
 }
 
 @theme inline {

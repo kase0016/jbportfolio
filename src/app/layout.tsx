@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DM_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -6,6 +7,18 @@ const title =
   "JB Kasenda — Full‑Stack Developer (React/Next.js, Node, TypeScript)";
 const description =
   "Full‑stack developer in Ottawa, ON. Building modern web apps with Next.js, Node, Prisma, and PostgreSQL. Bilingual (EN/FR).";
+
+export const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+});
+
+export const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: title,
@@ -28,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={(dmSans.variable, roboto.variable)}>
       <body>
         <Providers>{children}</Providers>
       </body>
