@@ -211,9 +211,9 @@ const AboutMe = () => {
       </div>
 
       {/* Quote of the Day */}
-      <div className="px-8 lg:py-20 lg:px-20 xl:px-55 flex justify-center xl:py-30">
+      <div className="flex justify-centerpx-8 pt-8 px-8 lg:py-10 lg:px-20 xl:px-35 xl:py-30">
         {quotes && (
-          <div className="w-full rounded-3xl bg-[rgba(4,28,50,0.85)] border border-[rgba(142,250,205,0.35)] shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-6 md:p-10">
+          <div className="flex flex-col items-center w-full rounded-3xl bg-[rgba(4,28,50,0.85)] border border-[rgba(142,250,205,0.35)] shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-6 md:p-10">
             <h1
               className="text-[27px] font-semibold py-2 tracking-[-0.07em] xl:text-[45px]"
               style={{ fontFamily: "var(--font-dm-sans)" }}
@@ -221,7 +221,7 @@ const AboutMe = () => {
               Quote of The Day
             </h1>
             <p
-              className="text-[17px]/5 pb-2 xl:text-[26px] xl:leading-tight text-[var(--mint-green)]"
+              className="text-[17px]/5 pb-2 lg:mx-40 lg:text-center xl:text-[26px] xl:leading-tight text-[var(--mint-green)]"
               style={{ fontFamily: "var(--font-roboto)" }}
             >
               &quot;{quotes?.quote.body}&quot;
@@ -232,140 +232,191 @@ const AboutMe = () => {
             >
               - {quotes?.quote.author}
             </p>
+            <p className="self-end italic">Powered by: www.favqs.com</p>
           </div>
         )}
       </div>
 
       {/* About Me */}
-      <div className="px-8 py-10 lg:px-20 xl:px-35 flex flex-col items-center gap-5 lg:flex-row lg:justify-center">
-        <div className="relative mx-auto w-full max-w-[300px] aspect-[1/1] lg:aspect-[9/16] lg:flex-3 lg:max-w-[400px] xl:max-w-[400px]">
-          <Image
-            src="/jb.png"
-            alt="Portrait of Jean-Baptiste Kasenda"
-            fill
-            className="object-cover rounded-2xl shadow-[0_18px_45px_rgba(0,0,0,0.7)] border-2 border-[rgba(142,250,205,0.5)]"
-            priority
-          />
-        </div>
-
-        <div className="mt-4 lg:mt-0 lg:ml-10 w-full max-w-3xl rounded-3xl bg-[rgba(1,18,74,0.85)] border border-[rgba(142,250,205,0.3)] shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-6 md:p-8 lg:p-10 text-center lg:text-left">
+      <div className="px-8 mt-4 lg:px-20 xl:px-35 flex flex-col items-center gap-5 lg:flex-row lg:justify-center">
+        <div className=" py-15 lg:py-20 w-full rounded-3xl bg-[rgba(1,18,74,0.85)] border border-[rgba(142,250,205,0.3)] shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-6 md:p-8 lg:p-10 text-center lg:text-left">
           <h1
             className="text-[27px] font-semibold pb-4 tracking-[-0.07em] xl:text-[45px]"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             About Me
           </h1>
-          <p
-            className="text-[17px]/6 pb-5 text-slate-100"
-            style={{ fontFamily: "var(--font-roboto)" }}
-          >
-            I&apos;m Jean-Baptiste Kasenda, a developer who began in content
-            creation—video editing and visual design in Photoshop and
-            Illustrator—then moved into software when I co-founded a startup and
-            trained to build our web app. Since then, coding and problem-solving
-            have been my focus.
-          </p>
-          <p
-            className="text-[17px]/6 pb-5 text-slate-100"
-            style={{ fontFamily: "var(--font-roboto)" }}
-          >
-            Today I&apos;m a full-stack developer working with React, Next.js,
-            Redux, TypeScript, Tailwind, HTML/CSS on the front end and Node.js,
-            Express, MongoDB on the back, and I still bring a designer&apos;s
-            eye with Figma and Adobe (After Effects, Photoshop, Premiere Pro,
-            Illustrator). I&apos;m excited to kick-start my journey as a
-            software developer and bring that blend of craft and care to every
-            project.
-          </p>
-          <p
-            className="text-[17px]/6 text-slate-100"
-            style={{ fontFamily: "var(--font-roboto)" }}
-          >
-            You can contact me by email at:
-          </p>
-          <p
-            className="text-[17px]/6 font-bold text-[var(--electric-green)]"
-            style={{ fontFamily: "var(--font-roboto)" }}
-          >
-            jb.kasenda@outlook.com
-          </p>
 
-          <h1
-            className="text-[27px] font-semibold py-4 tracking-[-0.07em]"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
-          >
-            Education
-          </h1>
-          <div className="flex flex-col lg:flex-row gap-5 items-center lg:items-start">
-            <div className="text-center lg:text-left">
-              <Image
-                width={300}
-                height={100}
-                alt="Waterloo University Logo"
-                src="/uwlogo.png"
-                className="mx-auto lg:mx-0"
-              />
-              <h3
-                className="text-[17px]/6 pb-0.5 font-semibold tracking-[-0.05em]"
+          <div className="xl:grid xl:grid-cols-2 xl:gap-5">
+            {/* How It All Started */}
+            <div>
+              <h2
+                className="text-[27px] font-semibold py-4 tracking-[-0.07em] xl:text-[28px] xl:pb-4 xl:py-0"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                University of Waterloo
-              </h3>
-              <h3
-                className="text-[15px]/6 font-normal text-slate-100"
+                How It All Started
+              </h2>
+              <p
+                className="text-[17px]/6 pb-5 text-slate-100"
                 style={{ fontFamily: "var(--font-roboto)" }}
               >
-                General Arts
-              </h3>
-              <h3
-                className="text-[15px]/6 font-normal -mt-1 italic text-slate-100"
+                I&apos;m Jean-Baptiste Kasenda, a developer who began in content
+                creation—video editing and visual design in Photoshop and
+                Illustrator—then moved into software when I co-founded a startup
+                and trained to build our web app. I went from designing visuals
+                to engineering the platforms that deliver them.
+              </p>
+              <p
+                className="text-[17px]/6 pb-5 text-slate-100"
                 style={{ fontFamily: "var(--font-roboto)" }}
               >
-                2016 - 2020
-              </h3>
+                Since then, coding and problem-solving have been my focus.
+                I&apos;ve grown through tools like React, Next.js, Redux,
+                TypeScript, Tailwind, Node.js, Express, and MongoDB—blending
+                solid engineering practices with a designer&apos;s eye for
+                clean, intentional UI.
+              </p>
+              <p
+                className="text-[17px]/6 text-slate-100"
+                style={{ fontFamily: "var(--font-roboto)" }}
+              >
+                You can contact me by email at:
+              </p>
+              <p
+                className="text-[17px]/6 font-bold text-[var(--electric-green)]"
+                style={{ fontFamily: "var(--font-roboto)" }}
+              >
+                jb.kasenda@outlook.com
+              </p>
             </div>
-            <div className="text-center lg:text-left">
-              <Image
-                width={280}
-                height={100}
-                alt="Algonquin College Logo"
-                src="/ACLogo.png"
-                className="mx-auto lg:mx-0"
-              />
-              <h3
-                className="text-[17px]/6 pb-0.5 font-semibold tracking-[-0.05em] lg:leading-4.5"
+
+            {/* Beyond the Code */}
+            <div className="mt-6 xl:mt-0">
+              <h2
+                className="text-[27px] font-semibold pb-3 tracking-[-0.07em] xl:text-[28px]"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                Algonquin College Ottawa Campus
-              </h3>
-              <h3
-                className="text-[15px]/6 font-normal lg:leading-4.5 text-slate-100"
+                Beyond the Code
+              </h2>
+              <p
+                className="text-[17px]/6 pb-4 text-slate-100"
                 style={{ fontFamily: "var(--font-roboto)" }}
               >
-                Mobile Application Development and Design
-              </h3>
-              <h3
-                className="text-[15px]/6 font-normal -mt-1 italic text-slate-100"
+                My background shapes how I work—on and off the screen. Here are
+                a few strengths I bring to any team:
+              </p>
+              <ul
+                className="text-[17px]/6 space-y-2 text-slate-100"
                 style={{ fontFamily: "var(--font-roboto)" }}
               >
-                2023 - 2025
-              </h3>
+                <li>
+                  <span className="font-semibold text-[var(--electric-green)]">
+                    Bilingual (English &amp; French):
+                  </span>{" "}
+                  Fluent in both speaking and writing, offering clear
+                  communication across teams and clients.
+                </li>
+
+                <li>
+                  <span className="font-semibold text-[var(--electric-green)]">
+                    Team-Oriented:
+                  </span>{" "}
+                  Playing university varsity football taught me to collaborate
+                  effectively, stay disciplined, and perform with a team under
+                  pressure.
+                </li>
+
+                <li>
+                  <span className="font-semibold text-[var(--electric-green)]">
+                    Collaborative Mindset:
+                  </span>{" "}
+                  I enjoy working with others to refine ideas and build
+                  experiences that feel intentional from UX to implementation.
+                </li>
+              </ul>
+            </div>
+
+            {/* Education */}
+            <div className="mt-8 xl:mt-0 xl:col-span-2">
+              <h2
+                className="text-[27px] font-semibold py-4 tracking-[-0.07em]"
+                style={{ fontFamily: "var(--font-dm-sans)" }}
+              >
+                Education
+              </h2>
+              <div className="flex flex-col lg:flex-row gap-5 items-center lg:items-start">
+                <div className="text-center lg:text-left">
+                  <Image
+                    width={300}
+                    height={100}
+                    alt="Waterloo University Logo"
+                    src="/uwlogo.png"
+                    className="mx-auto lg:mx-0"
+                  />
+                  <h3
+                    className="text-[17px]/6 pb-0.5 font-semibold tracking-[-0.05em]"
+                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                  >
+                    University of Waterloo
+                  </h3>
+                  <h3
+                    className="text-[15px]/6 font-normal text-slate-100"
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    General Arts
+                  </h3>
+                  <h3
+                    className="text-[15px]/6 font-normal -mt-1 italic text-slate-100"
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    2016 - 2020
+                  </h3>
+                </div>
+
+                <div className="text-center lg:text-left">
+                  <Image
+                    width={280}
+                    height={100}
+                    alt="Algonquin College Logo"
+                    src="/ACLogo.png"
+                    className="mx-auto lg:mx-0"
+                  />
+                  <h3
+                    className="text-[17px]/6 pb-0.5 font-semibold tracking-[-0.05em] lg:leading-4.5"
+                    style={{ fontFamily: "var(--font-dm-sans)" }}
+                  >
+                    Algonquin College Ottawa Campus
+                  </h3>
+                  <h3
+                    className="text-[15px]/6 font-normal lg:leading-4.5 text-slate-100"
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    Mobile Application Development and Design
+                  </h3>
+                  <h3
+                    className="text-[15px]/6 font-normal -mt-1 italic text-slate-100"
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    2023 - 2025
+                  </h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* My Projects */}
-      <div id="myprojects" className="px-8 py-10 lg:px-20 xl:py-20 ">
+      <div id="myprojects">
         <div>
           <h1
-            className="text-[27px] font-semibold py-4 tracking-[-0.07em] xl:text-[45px] xl:px-20"
+            className=" px-8 text-[27px] font-semibold py-4 tracking-[-0.07em] lg:px-20 xl:px-35 xl:text-[45px]"
             style={{ fontFamily: "var(--font-dm-sans)" }}
           >
             My Projects
           </h1>
           <p
-            className="text-[17px]/6 pb-5 xl:pl-20 xl:pr-50 text-slate-100 xl:text-[32px]/10"
+            className="text-[17px]/6 pb-5 px-8 lg:px-20 xl:px-35 xl:pr-50 text-slate-100 xl:text-[32px]/10"
             style={{ fontFamily: "var(--font-roboto)" }}
           >
             Below are some of the projects I&apos;ve worked on and links to the
@@ -373,11 +424,11 @@ const AboutMe = () => {
           </p>
 
           {/* Projects */}
-          <div className="flex flex-col gap-10 lg:flex-row lg:overflow-x-auto lg:scrollbar-hide lg:snap-x lg:snap-mandatory lg:w-full lg:px-4 xl:w-[100%] xl:mx-auto xl:p-20">
+          <div className="flex flex-col gap-10 px-8 py-10 lg:flex-row lg:overflow-x-auto lg:scrollbar-hide lg:snap-x lg:snap-mandatory lg:w-full lg:p-7 xl:w-[100%] xl:mx-auto xl:px-20 xl:p-10">
             {/* Project 1 */}
-            <div className="flex flex-col lg:gap-5 lg:max-w-[75%] xl:max-w-[60%] lg:shrink-0 lg:snap-center rounded-bl-4xl rounded-tr-4xl border border-[rgba(142,250,205,0.35)] bg-[rgba(4,28,50,0.9)] shadow-[0_18px_45px_rgba(0,0,0,0.7)] p-6 lg:p-10">
+            <div className="flex flex-col lg:gap-5 lg:max-w-[65%] xl:max-w-[60%] lg:shrink-0 lg:snap-center rounded-bl-4xl rounded-tr-4xl border border-[rgba(142,250,205,0.35)] bg-[rgba(4,28,50,0.9)] shadow-[0_18px_45px_rgba(0,0,0,0.7)] p-6 lg:p-10">
               {/* Text Section */}
-              <div className="flex-1 flex flex-col">
+              <div className=" flex flex-col">
                 <h1
                   className="text-[20px] font-semibold pb-2 tracking-[-0.07em] xl:text-[30px]"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
@@ -388,29 +439,70 @@ const AboutMe = () => {
                   className="text-[17px] leading-6 pb-5 text-slate-100"
                   style={{ fontFamily: "var(--font-roboto)" }}
                 >
-                  This web application is built with Next.js and TypeScript,
-                  styled with Tailwind CSS, and powered by a Neon PostgreSQL
-                  database accessed through Prisma ORM. The homepage includes
-                  search and multi-facet filtering, along with card-based
-                  listings dynamically generated from the database. I also
-                  developed an admin portal that enables users to create, edit,
-                  and delete records across multiple models. Additional features
-                  include a bookmarking system and content sharing for improved
-                  user experience. The entire application is deployed on Vercel
-                  for high performance and scalability.
+                  A full-stack web application built with Next.js, TypeScript,
+                  and PostgreSQL. Features include search, multi-facet
+                  filtering, dynamic listings, and an admin portal for creating
+                  and managing content — all deployed on Vercel.
                 </p>
-                <a
-                  href="https://www.themotive.ca/curatedlists"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="self-center md:self-start inline-flex items-center justify-center text-[17px] lg:text-[18px] font-semibold
+                <div className="flex flex-col items-center md:flex-row gap-5">
+                  <a
+                    href="https://www.themotive.ca/curatedlists"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-center md:self-start inline-flex items-center justify-center text-[17px] lg:text-[18px] font-semibold
                          bg-[var(--electric-green)] text-[var(--charcoal-navy)]
                          px-7 py-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.6)]
                          hover:brightness-110 hover:-translate-y-[1px] transition-all"
-                  style={{ fontFamily: "var(--font-roboto)" }}
-                >
-                  Check it Out
-                </a>
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    Check it Out
+                  </a>
+                  <div className="flex gap-4 mt-2">
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/13.png"
+                        alt="NextJs Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/17.png"
+                        alt="Tailwind Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/16.png"
+                        alt="TypeScript Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/18.png"
+                        alt="PostgreSQL Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/19.png"
+                        alt="Prisma Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Images */}
@@ -440,7 +532,7 @@ const AboutMe = () => {
             </div>
 
             {/* Project 2 */}
-            <div className="flex flex-col lg:gap-5 lg:max-w-[75%] xl:max-w-[60%] lg:shrink-0 lg:snap-center rounded-bl-4xl rounded-tr-4xl border border-[rgba(142,250,205,0.35)] bg-[rgba(4,28,50,0.9)] shadow-[0_18px_45px_rgba(0,0,0,0.7)] p-6 lg:p-10">
+            <div className="flex flex-col lg:gap-5 lg:max-w-[65%] xl:max-w-[60%] lg:shrink-0 lg:snap-center rounded-bl-4xl rounded-tr-4xl border border-[rgba(142,250,205,0.35)] bg-[rgba(4,28,50,0.9)] shadow-[0_18px_45px_rgba(0,0,0,0.7)] p-6 lg:p-10">
               {/* Text Section */}
               <div className="flex-1 flex flex-col">
                 <h1
@@ -453,30 +545,53 @@ const AboutMe = () => {
                   className="text-[17px] leading-6 pb-5 text-slate-100"
                   style={{ fontFamily: "var(--font-roboto)" }}
                 >
-                  I designed and developed a responsive website for a local
-                  Ottawa daycare, ensuring a seamless experience across mobile,
-                  tablet, and desktop devices. The site was built using Next.js,
-                  Tailwind CSS, and JavaScript, and deployed on Vercel for fast
-                  performance and reliable hosting. I also configured a custom
-                  email form that delivers inquiries directly to the client’s
-                  inbox, improving their lead response workflow. In addition, I
-                  helped craft clear, engaging copy aligned with the daycare’s
-                  tone and audience in both English and French, and implemented
-                  basic SEO metadata to enhance local visibility on search
-                  engines.
+                  Designed and developed a fully responsive daycare website
+                  using Next.js and Tailwind. Includes a custom email inquiry
+                  form, bilingual copy (EN/FR), and basic SEO to improve local
+                  visibility — deployed on Vercel.
                 </p>
-                <a
-                  href="https://www.mdaycare.ca"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="self-center md:self-start inline-flex items-center justify-center text-[17px] lg:text-[18px] font-semibold
+                <div className="flex flex-col items-center md:flex-row gap-5">
+                  <a
+                    href="https://www.mdaycare.ca"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-center md:self-start inline-flex items-center justify-center text-[17px] lg:text-[18px] font-semibold
                          bg-[var(--electric-green)] text-[var(--charcoal-navy)]
                          px-7 py-3 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.6)]
                          hover:brightness-110 hover:-translate-y-[1px] transition-all"
-                  style={{ fontFamily: "var(--font-roboto)" }}
-                >
-                  Check it Out
-                </a>
+                    style={{ fontFamily: "var(--font-roboto)" }}
+                  >
+                    Check it Out
+                  </a>
+                  <div className="flex gap-4 mt-2">
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/13.png"
+                        alt="NextJs Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/17.png"
+                        alt="Tailwind Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+
+                    <div className="relative w-10 h-10">
+                      <Image
+                        src="/2.png"
+                        alt="JavaScript Logo"
+                        fill
+                        className="object-contain hover:scale-110 transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Images */}
