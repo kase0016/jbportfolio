@@ -240,7 +240,7 @@ const AboutMe = () => {
       <div className="px-8 py-10 lg:px-20 xl:px-35 flex flex-col items-center gap-5 lg:flex-row lg:justify-center">
         <div className="relative mx-auto w-full max-w-[300px] aspect-[1/1] lg:aspect-[9/16] lg:flex-3 lg:max-w-[400px] xl:max-w-[400px]">
           <Image
-            src="/jb.jpg"
+            src="/jb.png"
             alt="Portrait of Jean-Baptiste Kasenda"
             fill
             className="object-cover rounded-2xl shadow-[0_18px_45px_rgba(0,0,0,0.7)] border-2 border-[rgba(142,250,205,0.5)]"
