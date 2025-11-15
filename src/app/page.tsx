@@ -92,7 +92,7 @@ const Home = () => {
   }, [coords, dispatch]);
 
   return (
-    <div className="h-[100%] text-white bg-[linear-gradient(219deg,_var(--marine-mid)_0%,_var(--marine-mid-light)_25%,_var(--teal-bridge)_55%,_var(--electric-green)_75%,_var(--marine-deep)_100%)]">
+    <div className="h-[100%] md:h-[100vh] text-white bg-[linear-gradient(219deg,_var(--marine-mid)_0%,_var(--marine-mid-light)_25%,_var(--teal-bridge)_55%,_var(--electric-green)_75%,_var(--marine-deep)_100%)]">
       {/* Header Section */}
       <div className="px-8 flex flex-row items-center pt-5 justify-between lg:px-20 xl:px-45 xl:pt-15">
         {/* Weather In Your Area */}
@@ -192,7 +192,7 @@ const Home = () => {
       </div>
 
       {/* Main Hero Section */}
-      <div className="flex flex-col justify-center gap-3 px-8 lg:px-20 xl:px-45 xl:h-[50dvh] xl:items-center">
+      <div className=" flex flex-col justify-center gap-3 px-8 lg:px-20 xl:px-45 xl:h-[50dvh] xl:items-center">
         <div className="flex flex-col sm:flex-row lg:gap-6 xl:gap-10">
           <Image
             src="/jb.png"
