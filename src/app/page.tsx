@@ -192,15 +192,15 @@ const Home = () => {
       </div>
 
       {/* Main Hero Section */}
-      <div className=" flex flex-col justify-center gap-3 px-8 lg:px-20 xl:px-45 xl:h-[50dvh] xl:items-center">
-        <div className="flex flex-col sm:flex-row lg:gap-6 xl:gap-10">
+      <div className=" flex flex-col justify-center gap-3 px-8 pt-10 lg:px-20 xl:px-45 xl:h-[50dvh] xl:items-center">
+        <div className="flex flex-col md:gap-5 sm:flex-row lg:gap-6 xl:gap-10">
           <Image
             src="/jb.png"
             alt="Portrait of Jean-Baptiste Kasenda"
             width={320}
             height={320}
             priority
-            className="rounded-full object-cover mb-2.5 self-center border-4 border-[var(--mint-green)] shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+            className=" rounded-full object-cover mb-2.5 self-center border-4 border-[var(--mint-green)] shadow-[0_8px_24px_rgba(0,0,0,0.35)] w-[260px] sm:w-[280px] lg:w-[320px]"
           />
 
           {/* Hero Banner Text */}
@@ -213,7 +213,7 @@ const Home = () => {
                 Jean-Baptiste Kasenda
               </h2>
               <h1
-                className="py-3 text-[40px]/8 sm:text-[57px]/13 font-black tracking-[-0.07em] text-white"
+                className="py-3 text-[40px]/8 lg:text-[57px]/13 font-black tracking-[-0.07em] text-white"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
                 {myTitle}
@@ -250,7 +250,7 @@ const Home = () => {
       </div>
 
       {/* Tech Stack & Skill Logo Section */}
-      <div className="py-7 relative overflow-hidden backdrop-blur-md mt-4">
+      <div className="py-7 relative overflow-hidden backdrop-blur-md">
         <div className="flex animate-marquee-x whitespace-nowrap">
           {/* track half 1 */}
           <div className="flex gap-3.5 pr-3.5 shrink-0">
@@ -259,112 +259,112 @@ const Home = () => {
               alt="Javascript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/5.png"
               alt="React Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/6.png"
               alt=""
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/7.png"
               alt="Redux Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/16.png"
               alt="Typescript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/17.png"
               alt="Tailwind Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/14.png"
               alt="MongoDB Logo"
               width={35}
               height={50}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/13.png"
               alt="Next JS"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/15.png"
               alt="Figma Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/3.png"
               alt="CSS Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/4.png"
               alt="HTML5 Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/8.png"
               alt="Adobe Photoshop"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/9.png"
               alt="Adobe Illustrator"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/10.png"
               alt="Adobe After Effect"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/11.png"
               alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/12.png"
               alt="Adobe Light Room Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
           </div>
 
@@ -375,112 +375,112 @@ const Home = () => {
               alt="Javascript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/5.png"
               alt="React Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/6.png"
               alt=""
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/7.png"
               alt="Redux Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/16.png"
               alt="Typescript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/17.png"
               alt="Tailwind Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/14.png"
               alt="MongoDB Logo"
               width={35}
               height={50}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/13.png"
               alt="Next JS"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/15.png"
               alt="Figma Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/3.png"
               alt="CSS Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/4.png"
               alt="HTML5 Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/8.png"
               alt="Adobe Photoshop"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/9.png"
               alt="Adobe Illustrator"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/10.png"
               alt="Adobe After Effect"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/11.png"
               alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/12.png"
               alt="Adobe Light Room Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
           </div>
 
@@ -491,112 +491,112 @@ const Home = () => {
               alt="Javascript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/5.png"
               alt="React Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/6.png"
               alt=""
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/7.png"
               alt="Redux Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/16.png"
               alt="Typescript Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/17.png"
               alt="Tailwind Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/14.png"
               alt="MongoDB Logo"
               width={35}
               height={50}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/13.png"
               alt="Next JS"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/15.png"
               alt="Figma Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/3.png"
               alt="CSS Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/4.png"
               alt="HTML5 Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/8.png"
               alt="Adobe Photoshop"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/9.png"
               alt="Adobe Illustrator"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/10.png"
               alt="Adobe After Effect"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/11.png"
               alt="Adobe Premiere Pro Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
             <Image
               src="/12.png"
               alt="Adobe Light Room Logo"
               width={70}
               height={70}
-              className="object-contain mb-2.5 self-center"
+              className="object-contain mb-2.5 self-center hover:scale-110 transition-all"
             />
           </div>
         </div>
