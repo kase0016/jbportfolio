@@ -97,7 +97,7 @@ const AboutMe = () => {
                 className="text-[30px] font-medium tracking-[-0.07em] ml-1"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                &nbsp;{weather.tempC}&deg;C
+                &nbsp;{Math.floor(weather?.tempC)}&deg;C
               </h2>
             </div>
           </div>

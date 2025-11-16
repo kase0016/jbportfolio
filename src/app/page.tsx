@@ -109,7 +109,7 @@ const Home = () => {
                 className="text-[30px] font-medium ml-1"
                 style={{ fontFamily: "var(--font-roboto)" }}
               >
-                &nbsp;{weather?.tempC}&deg;C
+                &nbsp;{Math.floor(weather?.tempC)}&deg;C
               </h2>
             </div>
           </div>
